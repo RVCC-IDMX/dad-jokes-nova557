@@ -6,7 +6,7 @@ const getRandomDadJoke = async () => {
     },
   });
   const jsonJoke = await jokeStream.json();
-  const joke = jsonJoke.json;
+  const { joke } = jsonJoke;
   return joke;
 };
 
@@ -20,7 +20,7 @@ const refreshJoke = async () => {
   displayJoke(joke);
 };
 
-// load 1st joke
+// load first joke
 refreshJoke();
 
 setInterval(refreshJoke, 10000);
